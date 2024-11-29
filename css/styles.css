@@ -1,0 +1,243 @@
+/* || ASSETS || */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* || MODERN RESET
+        Credits go to:
+            Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/ || */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+/* || STYLESHEET || */
+:root {
+/* Background colors */
+    --BODY_BG-COLOR: hsl(30, 38%, 92%);
+    --CARD_BG-COLOR: hsl(0, 0%, 100%);
+    --BUTTON_BG-COLOR: hsl(158, 36%, 37%);
+
+/* Font colors */
+    --TITLE_F-COLOR: hsl(212, 21%, 14%);
+    --MAIN_F-COLOR: hsl(228, 12%, 48%);
+    --BUTTON_F-COLOR: hsl(0, 0%, 100%);
+    --PRICE_F-COLOR: hsl(158, 36%, 37%);
+
+/* Active states colors */
+    --BUTTON_ACT-COLOR: hsl(158, 42%, 18%);
+}
+
+
+/* || || MOBILE || || */
+
+
+/* || || BODY || || */
+body {
+    background-color: var(--BODY_BG-COLOR);
+    display: flex;
+    flex-direction: column;
+    min-width: 375px; 
+}
+
+/*Card*/
+.card {
+    background-color: white;
+    margin: 1.75em 1em 0;
+    border-radius: 10px;
+}
+
+/* || HEADER || */
+/*Product picture*/
+img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* || MAIN || */
+/*Product presentation*/
+main {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--MAIN_F-COLOR);
+    padding: 1.5em;
+}
+
+#product {
+    font-size: 0.75em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 1.5em 0 0.7em;
+}
+
+h1 {
+    font-family: 'Fraunces', 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 32px;
+    color: var(--TITLE_F-COLOR);
+    margin: 0 0 0.7em;
+}
+
+#product__description {
+    font-size: 0.875em;
+    letter-spacing: 0;
+    line-height: 23px;
+    margin: 0 0 1.5em;
+}
+
+/*Price*/
+.price {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.25em;
+
+}
+
+#new__price {
+    font-family: 'Fraunces', 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 32px;
+    color: var(--PRICE_F-COLOR);
+}
+
+#old__price {
+    align-self: center;
+    padding-left: 0.8em;
+    text-decoration: line-through;
+    letter-spacing: 0;
+    line-height: 23px;
+}
+
+/*Add to cart*/
+button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5em;
+    background-color: var(--BUTTON_BG-COLOR);
+    color: var(--BUTTON_F-COLOR);
+    font-size: 0.875em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    padding: 0.95em;
+}
+
+/* || FOOTER || */
+/*Credits*/
+.attribution {
+    white-space: break-spaces;
+    text-align: center;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--TITLE_F-COLOR);
+    font-size: 0.8em;
+}
+
+a {
+    color: var(--PRICE_F-COLOR);
+    text-decoration: none;
+}
+
+
+/* || || TABLET || || */
+
+
+@media screen and (min-width: 768px) {
+/*Card*/
+.card {
+    display: flex;
+    flex-direction: row;
+    margin: 10% auto 0;
+    height: 28.125em;
+    width: 37.5em;  
+}
+
+picture {
+    height: 28.125em;
+    width: 18.75em;
+}
+
+img {
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+}
+}
+
+
+/* || || DESKTOP || || */
+
+
+@media screen and (min-width: 1024px) {
+.card {
+    margin-bottom: 1em;
+}
+
+/* || MAIN || */
+/*Product presentation*/
+main {
+    padding: 2.375em 2em;
+}
+
+#product {
+    margin: 0 0 1.25em;
+}
+
+h1 {
+    margin: 0 0 1.5em;
+}
+
+#product__description {
+    margin: 0 0 1.8125em;
+}
+
+/*Add to cart*/
+button:hover {
+    transition: 0.3s ease-in-out;
+    background-color: var(--BUTTON_ACT-COLOR);
+}
+
+/* || FOOTER || */
+/*Credits*/
+.attribution {
+    white-space: normal;
+}
+
+a {
+    color: var(--PRICE_F-COLOR);
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bolder;
+    color: var(--BUTTON_ACT-COLOR);
+}
+}
